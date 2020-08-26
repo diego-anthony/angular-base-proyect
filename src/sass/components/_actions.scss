@@ -1,0 +1,11 @@
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.25rem;
+    &__item {
+        &--edit {
+            // TODO: centralizar color
+            background-color: #f3a31d;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+$spinner-size:20px;
+$spinner-margin:-10px;
+
+.spinner:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $spinner-size;
+    height: $spinner-size;
+    margin-top: $spinner-margin;
+    margin-left: $spinner-margin;
+    border-radius: 50%;
+    border: 2px solid $colorWhite;
+    border-top-color: $colorBlack;
+    animation: spinner 0.8s linear infinite;
+}
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

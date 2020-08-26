@@ -1,0 +1,23 @@
+<nav class="nav">
+    <div class="nav__group">
+        <a [routerLink]="routeHome" class="nav__item hover-pointer">
+            <img src="assets/img/essalud.png" alt="Essalud" class="nav__img">
+        </a>
+        <div class="nav__item nav__line"></div>
+        <a class="button nav__button" [routerLink]="routeUsers" *ngIf="this.authService.isAuthenticated() && !this.authService.hasRol(rolUser)">
+            <span class="icon">
+            </span>
+            <span>Usuarios</span>
+        </a>
+    </div>
+    <div class="nav__group">
+        <button class="nav__button is-outlined" mat-button [matMenuTriggerFor]="menu" matPrefix *ngIf="authService.isAuthenticated()">
+            <span class="icon">
+            </span>
+            {{this.authService.getUserSession().user}}
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+          </mat-menu>
+    </div>
+</nav>

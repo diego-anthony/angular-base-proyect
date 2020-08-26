@@ -1,0 +1,68 @@
+@import 'base/typography';
+@import 'base/color';
+@import 'base/breakpoints';
+@import 'base/bem';
+
+@import 'themes/material-theme.scss';
+
+html,
+body {
+    height: 100%;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+    font-family: "concord";
+    font-weight: 300;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.cdk-global-scrollblock {
+    position: fixed;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+@import 'components/spinner';
+@import 'components/icons';
+@import 'components/capsule';
+@import 'components/file-set';
+@import 'components/file-loader';
+@import 'components/actions';
+@import 'components/toast';
+@import 'components/link';
+
+@import 'layout/navbar';
+@import 'layout/footer';
+@import 'layout/page';
+@import 'layout/category';
+@import 'layout/container';
+@import 'layout/sidebar-search';
+@import 'layout/filter';
+@import 'layout/table';
+@import 'layout/form';
+@import 'layout/presupuesto';
+
+@import 'utils/margin';
+@import 'utils/lazyload';
+@import 'utils/hover';
+@import 'utils/status-color';
+@import 'utils/center';
+
+
+html{
+    font-size: 1rem;
+}
+@include sm{
+    html{
+        font-size: 1.1rem;
+    }
+}
+@include lg{
+    html{
+        font-size: 18px;
+    }
+}

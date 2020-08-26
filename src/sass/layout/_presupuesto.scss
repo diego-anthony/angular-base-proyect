@@ -1,0 +1,77 @@
+.presupuesto {
+    text-align: center;
+    margin: 0 auto;
+    min-width: 36rem;
+    &__header {
+        background-color: $colorPrimary;
+        color: white;
+        margin-bottom: .25rem;
+        font-size: .9rem;
+        & > *:not(:last-child) {
+            border-right: solid 1px;
+        }
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: 38% repeat(3, 14%) 20%;
+    }
+    &__total {
+        background-color: $colorPrimary;
+        color: white;
+        grid-column: span 4;
+        font-size: .8rem;
+    }
+}
+
+.summary {
+    margin-bottom: 1rem;
+    &__body{
+        font-size: .725rem;
+    }
+    &__row{
+        & > * {
+            border-top: solid 1px;
+        }
+        & > *:not(:last-child) {
+            border-right: solid 1px;
+        }
+    }
+    &__footer {
+        background-color: $colorNeutral;
+        color: white;
+        font-size: .8rem;
+    }
+}
+
+.cell {
+    color: white;
+
+    &--gray {
+        background-color: $colorGrayDark;
+        font-size: .8rem;
+    }
+    &--info-percent {
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+    &--info {
+        grid-column: span 4;
+    }
+    &--percent {
+        background-color: $colorNeutralLight;
+        grid-column: 4/5;
+        grid-row: 1;
+    }
+}
+
+@include lg{
+    .presupuesto{
+        width: 80%;
+    }
+}
+
+@include xl{
+    .presupuesto{
+        width: 70%;
+    }
+}

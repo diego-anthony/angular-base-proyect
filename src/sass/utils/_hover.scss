@@ -1,0 +1,11 @@
+.hover-zoom-in {
+    transition: transform 0.15s ease-out;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.hover-pointer {
+    cursor: pointer;
+}

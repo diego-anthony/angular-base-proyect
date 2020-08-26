@@ -1,0 +1,17 @@
+// TODO: centrarlizar colores
+.is{
+    &--success{
+    }
+    &--info{
+        background-color: #007aff;
+        color: white;
+    }
+    &--warning{
+        background-color: #f3a31d;
+        color: white;
+    }
+    &--error{
+        background-color: #f14668;
+        color: white;
+    }
+}

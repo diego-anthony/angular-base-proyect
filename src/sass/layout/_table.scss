@@ -1,0 +1,25 @@
+@import '~src/sass/base/color';
+
+.table{
+    font-size: 0.675rem;
+    &__icon{
+        width: 1.5rem;
+        transition-property: transform;
+        transition-duration: .2s;
+        &:hover{
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    }
+    text-align: center;
+    & th{
+        font-weight: 400;
+        color: $colorPrimary !important;
+        line-height: .7rem;
+        text-align: center;
+    }
+    & td, & th{
+        
+        vertical-align: middle;
+    }
+}

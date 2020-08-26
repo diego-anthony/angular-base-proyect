@@ -1,0 +1,57 @@
+.sb-search {
+    color: $colorWhite;
+    height: 100%;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    row-gap: 1em;
+    &__group {
+        display: grid;
+        row-gap: 0.5rem;
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 80px;
+        column-gap: 0.25rem;
+        min-height: 2.1rem;
+        font-size: 0.7rem;
+    }
+    &__header {
+        font-size: 0.85rem;
+        color: $colorPrimary;
+        text-align: center;
+        >*{
+            background-color: $colorWhite;
+        }
+    }
+    &__box {
+        border: solid 1px;
+        padding: 0.1rem 0.5rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+    }
+}
+
+@include sm{
+    .sb-search{
+        padding: 1.5rem 4rem;
+    }
+}
+
+@include lg{
+    .sb-search {
+        width: 20rem;
+        padding: 1.5rem 2rem;
+        padding-top: 5rem;
+        height: auto;
+    }
+}
+
+@include xl{
+    .sb-search {
+        width: 22rem;
+    }
+}

@@ -1,0 +1,22 @@
+<main class="login-wrapper">
+    <form class="login" [formGroup]="form" (ngSubmit)="login()">
+        <h1 class="login__title">Bienvenido</h1>
+        <div class="field">
+            <label class="login__label">Usuario</label>
+            <p class="control has-icons-left has-icons-right">
+                <input class="input" [class.is-danger]="usernameFieldInvalid" placeholder="Usuario" formControlName="username">
+            </p>
+            <p class="help is-danger" *ngIf="usernameFieldInvalid">Este campo es requerido</p>
+        </div>
+        <div class="field">
+            <label class="login__label">Contraseña</label>
+            <p class="control has-icons-left">
+                <input class="input" [class.is-danger]="passwordFieldInvalid" type="password" placeholder="Contraseña" formControlName="password">
+            </p>
+            <p class="help is-danger" *ngIf="passwordFieldInvalid">Este campo es requerido</p>
+        </div>
+        <div class="login__footer">
+            <button mat-raised-button color="primary" class="button login__button" [class.is-loading]="isLoading" type="submit">INICIAR SESIÓN</button>
+        </div>
+    </form> 
+</main>

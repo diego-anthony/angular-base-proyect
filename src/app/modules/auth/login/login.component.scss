@@ -1,0 +1,41 @@
+@import "~src/sass/base/color";
+@import "~src/sass/base/breakpoints";
+.login-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 25px;
+
+    &__title {
+        color: $colorPrimary;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+    &__label {
+        display: inline-block;
+        margin-bottom: 0.25rem;
+        margin-left: 0.85rem;
+        color: $colorAccent;
+    }
+    &__footer {
+        max-width: 66%;
+        margin: 0 auto;
+        margin-top: 1.25rem;
+        display: grid;
+        row-gap: 0.25rem;
+    }
+    &__button {
+        width: 100%;
+        & > span {
+            margin-left: 0.25rem;
+            font-weight: 600;
+        }
+    }
+}

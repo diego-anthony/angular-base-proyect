@@ -1,0 +1,44 @@
+$borderRadiusFileSet: 20px;
+.file-set {
+    border: solid 1px $colorGrayDark;
+    border-radius: $borderRadiusFileSet;
+    max-width: 16rem;
+    margin: 0 auto;
+    &__item {
+        display: grid;
+        grid-template-columns: 8.1rem 1fr;
+        text-align: center;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1.5rem;
+        background: $colorPrimary;
+        color: white;
+        border-bottom: solid 1px white;
+        &--first {
+            border-radius: $borderRadiusFileSet 0 0 0;
+        }
+        &--last {
+            border-bottom: none;
+            border-radius: 0 0 0 $borderRadiusFileSet;
+        }
+    }
+    &__label {
+        margin: auto;
+        font-weight: 300;
+        font-size: 0.75rem;
+        line-height: 1.1;
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: solid 1px $colorGrayDark;
+        padding: 0.35rem 0;
+        &--last {
+            border-bottom: none;
+        }
+    }
+}

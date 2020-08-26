@@ -1,0 +1,95 @@
+.slider {
+    $dots: 3;
+    $dotSize: .5;
+    $dotMargin: 0.5;
+
+    $duration: 0.3s;
+    $timingEase: cubic-bezier(0.51, 0.92, 0.24, 1);
+    $timingBounce: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &__slides {
+        position: relative;
+        width: $dots * 100%;
+        height: 100%;
+        transition: transform $duration $timingEase;
+        will-change: transform;
+    }
+
+    @for $i from 0 to $dots {
+        $slide: 100% / $dots;
+        $left: $slide * $i;
+
+        &[data-pos="#{ $i }"] &__slides {
+            transform: translateX(-$left);
+        }
+    }
+
+    &__slide {
+        float: left;
+        width: 100% / $dots;
+        height: 100%;
+    }
+
+    &__dots {
+        display: flex;
+        position: absolute;
+        bottom: 1.5em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__dot {
+        display: block;
+        margin: 0 #{$dotMargin}em;
+        width: #{$dotSize}em;
+        height: #{$dotSize}em;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 100px;
+    }
+
+    &__indicator {
+        @extend .slider__dot;
+
+        position: absolute;
+        background: white;
+        width: auto;
+
+        &--left {
+            transition: left $duration $timingBounce, right $duration $duration/3 $timingBounce;
+        }
+
+        &--right {
+            transition: left $duration $duration/3 $timingBounce, right $duration $timingBounce;
+        }
+    }
+
+    @for $i from 0 to $dots {
+        $dot: $dotSize + $dotMargin * 2;
+        $left: $dot * $i;
+        $right: $dot * ($dots - $i) - $dot;
+
+        &[data-pos="#{ $i }"] &__indicator {
+            left: #{$left}em;
+            right: #{$right}em;
+        }
+    }
+}
+
+// Custom colors and styling for the demo
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+}
+
+.slider {
+    max-width: none;
+    max-height: 20rem;
+}

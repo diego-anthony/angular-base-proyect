@@ -1,0 +1,17 @@
+.dialog {
+    &__title {
+        font-size: 16pt;
+    }
+
+    &__message {
+        margin-bottom: 1rem;
+    }
+    &__footer {
+        float: right;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    &__button {
+        min-width: 6rem;
+    }
+}

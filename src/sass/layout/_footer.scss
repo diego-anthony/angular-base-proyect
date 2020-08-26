@@ -1,0 +1,66 @@
+.footer {
+    background-color: $colorGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    font-size: 7.5pt;
+    &__line {
+        width: 1px;
+        background-color: $colorGrayDark;
+        margin: 0 1rem;
+        height: 100;
+    }
+    &__link {
+        color: $colorGrayDark;
+        font-size: 10pt;
+        font-weight: 600;
+    }
+    &__img {
+        height: 50px;
+    }
+    &__block {
+        flex-direction: column;
+        & > p,
+        & > a {
+            align-self: center;
+            margin: 0;
+        }
+        &__item {
+            display: grid;
+        }
+        &--right {
+            margin-top: 1rem;
+        }
+    }
+    &__group-text {
+        display: grid;
+    }
+}
+
+@include md {
+    .footer {
+        display: flex;
+        padding: 0.7rem 2rem;
+    }
+}
+
+@include lg {
+    .footer {
+        display: flex;
+        padding: 0.7rem 2rem;
+        &__block {
+            display: flex;
+            flex-direction: row;
+            &--right {
+                margin-top: 0rem;
+            }
+        }
+        &__group-text,
+        &__block {
+            width: 22rem;
+        }
+    }
+}

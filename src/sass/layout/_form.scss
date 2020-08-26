@@ -1,0 +1,56 @@
+.form {
+    font-size: 14px;
+    &__footer {
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+    &__label {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 0.75rem;
+        color: $colorGrayDark;
+        display: inline-block;
+        line-height: 1.2;
+        margin-bottom: 0.15rem;
+    }
+}
+
+@include sm {
+    .form {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            column-gap: 0.5rem;
+        }
+    }
+}
+
+@include md {
+    .form {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@include lg {
+    .form {
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@include xl {
+    .form {
+        &__grid {
+            &--3 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            &--4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.capsule {
+    background: $colorPrimary;
+    color: $colorWhite;
+    display: inline-flex;
+    padding: 0.25rem 1rem;
+    border-radius: 8px;
+    &__icon {
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+    &__title{
+        font-weight: 100;
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,51 @@
+.select {
+  &__icon {
+    height: 25px;
+  }
+}
+
+.filter{
+  &__body{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    padding-right: 5rem;
+  }
+  &__item {
+    width: 100%;
+  }
+  &__footer{
+    text-align: center;
+    padding: .5rem 0;
+  }
+  &__button{
+    background-image: linear-gradient(to right, $colorPrimaryLight , $colorAccentLight);
+    width: 10rem;
+    border-radius: 8px;
+  }
+}
+
+@include md{
+  .filter{
+    &__body{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@include lg{
+  .filter{
+    &__body{
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include xl{
+  .filter{
+    &__body{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

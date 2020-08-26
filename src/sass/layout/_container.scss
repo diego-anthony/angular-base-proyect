@@ -1,0 +1,23 @@
+.container-search{
+    display: grid;
+    height: 100%;
+    max-width: 100vw;
+}
+
+@include lg{
+    .container-search{
+        grid-template-columns: 40% 0 60%;
+    }
+}
+
+@include xl{
+    .container-search{
+        grid-template-columns: 35% 0 65%;
+    }
+}
+
+@include rwd(1650){
+    .container-search{
+        grid-template-columns: 30% 0 70%;
+    }
+}

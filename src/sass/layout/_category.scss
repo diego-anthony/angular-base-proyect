@@ -1,0 +1,14 @@
+.category {
+    &__title {
+        color: $colorPrimary;
+        font-size: 14pt;
+        font-weight: 600;
+        letter-spacing: 0.07rem;
+        margin-bottom: 0.3rem;
+    }
+    &__sub-title {
+        color: $colorPrimaryLight;
+        font-size: 14pt;
+        letter-spacing: 0.025rem;
+    }
+}

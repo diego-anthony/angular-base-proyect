@@ -1,0 +1,99 @@
+.nav {
+    $self: &;
+    position: relative;
+    color: $colorPrimary;
+    background-color: $colorWhite;
+    padding: .75rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.01), 0 3px 10px 0 rgba(0, 0, 0, 0.05), 0 1px 18px 0 rgba(0, 0, 0, 0.01);
+    &__group {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 0.5rem;
+    }
+
+    &__item {
+        height: 2.5rem;
+        color: inherit;
+    }
+    &__line {
+        display: none;
+        width: 1px;
+        align-self: stretch;
+        background-color: $colorPrimary;
+    }
+
+    &__home {
+        display: none;
+        font-size: 1.4rem;
+        font-weight: 200;
+        align-items: flex-end;
+        &-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        &:hover {
+            color: inherit;
+        }
+    }
+    &__button {
+        align-self: center;
+        color: inherit;
+        border-color: inherit;
+        background-color: transparent;
+        &:hover {
+            color: $colorWhite;
+            background-color: $colorPrimary;
+        }
+    }
+    &__img {
+        display: none;
+        height: inherit;
+    }
+
+    &--dark {
+        color: $colorWhite;
+        background-color: $colorPrimary;
+        #{$self}__line {
+            background-color: $colorWhite;
+        }
+        #{$self}__button {
+            &:hover {
+                color: $colorPrimary;
+                background-color: $colorWhite;
+            }
+        }
+    }
+}
+
+@include sm {
+    .nav {
+        &__img {
+            display: block;
+        }
+    }
+}
+
+@include md {
+    .nav {
+        &__line {
+            display: block;
+        }
+
+        &__home {
+            display: flex;
+        }
+    }
+}
+
+@include lg {
+    $navPadH: 6rem;
+    .nav {
+        padding-left: $navPadH;
+        padding-right: $navPadH;
+        &__group {
+            gap: 1.5rem;
+        }
+    }
+}
