@@ -1,22 +1,26 @@
-<main class="login-wrapper">
-    <form class="login" [formGroup]="form" (ngSubmit)="login()">
-        <h1 class="login__title">Bienvenido</h1>
-        <div class="field">
-            <label class="login__label">Usuario</label>
-            <p class="control has-icons-left has-icons-right">
-                <input class="input" [class.is-danger]="usernameFieldInvalid" placeholder="Usuario" formControlName="username">
-            </p>
-            <p class="help is-danger" *ngIf="usernameFieldInvalid">Este campo es requerido</p>
+<div class="container">
+    <div class="login mat-elevation-z8">
+        <div class="login__header">
+            <img src="assets/images/essalud-white.png" alt="Essalud">
         </div>
-        <div class="field">
-            <label class="login__label">Contraseña</label>
-            <p class="control has-icons-left">
-                <input class="input" [class.is-danger]="passwordFieldInvalid" type="password" placeholder="Contraseña" formControlName="password">
-            </p>
-            <p class="help is-danger" *ngIf="passwordFieldInvalid">Este campo es requerido</p>
-        </div>
-        <div class="login__footer">
-            <button mat-raised-button color="primary" class="button login__button" [class.is-loading]="isLoading" type="submit">INICIAR SESIÓN</button>
-        </div>
-    </form> 
-</main>
+        <mat-card class="login__body mat-elevation-z">
+            <form [formGroup]="form" autocomplete="off" (ngSubmit)="login()" class="form">
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput formControlName="usuario">
+                    <mat-error *ngIf="usuarioField.hasError('required')">El usuario es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+                    <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword" matTooltip="Mostrar contraseña">
+                        <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="passwordField.hasError('required')">La contraseña el obligatoria</mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" [disabled]="isLoading" [class.spinner]="isLoading" type="submit">
+                    Ingresar </button>
+            </form>
+        </mat-card>
+    </div>
+</div>

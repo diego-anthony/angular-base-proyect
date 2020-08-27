@@ -14,12 +14,7 @@ import { Role } from '@core/enums/role.enum';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent implements OnInit {
-  routeHome = RouteUtil.buildAbsoluteRoute('');
-  routeUsers = RouteUtil.buildAbsoluteRoute(RoutePath.USUARIOS);
-  unsubscribe: Subject<void> = new Subject();
-  isDark = true;
-  rolUser: Role = Role.USUARIO;
-    // TODO: Cargar mediante store
+  unsubscribe$: Subject<void> = new Subject();
   username: string;
 
   constructor(

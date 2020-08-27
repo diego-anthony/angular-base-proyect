@@ -1,23 +1,8 @@
-.container-search{
-    display: grid;
-    height: 100%;
-    max-width: 100vw;
-}
-
-@include lg{
-    .container-search{
-        grid-template-columns: 40% 0 60%;
-    }
-}
-
-@include xl{
-    .container-search{
-        grid-template-columns: 35% 0 65%;
-    }
-}
-
-@include rwd(1650){
-    .container-search{
-        grid-template-columns: 30% 0 70%;
+.container {
+    background-color: #edf1f7;
+    padding: 4rem 1rem 0.5rem;
+    min-height: 100%;
+    @include lg{
+        padding: 5.25rem 2.25rem 0.75rem;
     }
 }

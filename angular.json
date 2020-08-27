@@ -29,9 +29,14 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ngx-toastr/toastr.css",
-              "src/sass/main.scss"
+              "src/sass/main.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/sass"
+              ]
+            },
             "scripts": [
               "node_modules/lazysizes/lazysizes.min.js"
             ]

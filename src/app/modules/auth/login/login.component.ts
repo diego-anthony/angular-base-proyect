@@ -19,16 +19,15 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
   isLoading = false;
+  hidePassword = true;
   unsubscribe$: Subject<void> = new Subject();
 
-  get usernameFieldInvalid() {
-    const field = this.form.get('username');
-    return field.touched && field.invalid;
+  get usuarioField() {
+    return this.form.get('usuario');
   }
 
-  get passwordFieldInvalid() {
-    const field = this.form.get('password');
-    return field.touched && field.invalid;
+  get passwordField() {
+    return this.form.get('password');
   }
 
   constructor(
@@ -39,17 +38,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.createForm();
+    this._createForm();
   }
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-  }
-  createForm() {
-    this.form = this._formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
   }
 
   login() {
@@ -71,5 +64,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     } else {
       this.form.markAllAsTouched();
     }
+  }
+
+  private _createForm() {
+    this.form = this._formBuilder.group({
+      usuario: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 }

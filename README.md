@@ -1,6 +1,6 @@
-﻿# {{REPLACE_TITLE}} #
+﻿# REPLACE_TITLE #
 
-{{REPLACE_DESCRIPTION}}
+REPLACE_DESCRIPTION
 
 ### Información Adicional ###
 * Deshabilitar advertencia de crypto.js
