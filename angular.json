@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "apps": {
+    "REPLACE_APP_NAME": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,8 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/backoffice-triaje/",
-            "outputPath": "dist/backoffice-triaje",
+            "baseHref": "/REPLACE_PROXY/",
+            "outputPath": "dist/REPLACE_PROXY",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,24 +69,52 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "apps:build"
+            "browserTarget": "REPLACE_APP_NAME:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "apps:build:production"
+              "browserTarget": "REPLACE_APP_NAME:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "apps:build"
+            "browserTarget": "REPLACE_APP_NAME:build"
           }
         },
         "test": {
@@ -124,18 +152,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "apps:serve"
+            "devServerTarget": "REPLACE_APP_NAME:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "apps:serve:production"
+              "devServerTarget": "REPLACE_APP_NAME:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "apps",
+  "defaultProject": "REPLACE_APP_NAME",
   "cli": {
     "analytics": "c0d66b71-d2f5-462c-be74-356a469b985b"
   }

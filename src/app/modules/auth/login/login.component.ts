@@ -8,7 +8,7 @@ import { NotificationService } from '@core/services/notification.service';
 import { AuthService } from '@core/services/auth.service';
 import { takeUntil, finalize, catchError } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
-import HttpStatusCode from '@core/enums/http-status-code';
+import HttpStatusCode from '@core/enums/http-status-code.enum';
 
 @Component({
   selector: 'app-login',

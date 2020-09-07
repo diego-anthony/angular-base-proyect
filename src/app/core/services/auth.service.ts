@@ -9,7 +9,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '@env';
 import { LoginRequest } from '../models/login-request.model';
 import { UserSession } from '../models/user-session.model';
-import { RouteUtil } from '../utils/route.util';
 import { RoutePath } from '../configs/route-path.config';
 import { Role } from '@core/enums/role.enum';
 
@@ -51,7 +50,7 @@ export class AuthService {
 
     logout(): void {
         localStorage.removeItem(KEY_USER_SESSION);
-        this._router.navigate(RouteUtil.buildAbsoluteRoute(RoutePath.LOGIN));
+        this._router.navigate([`/${RoutePath.LOGIN}`]);
     }
 
     hasRoles(roles: Role[]) {

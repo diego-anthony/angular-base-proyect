@@ -8,6 +8,7 @@ import LocaleEsPe from '@angular/common/locales/es-PE.js';
 import { RouterModule } from '@angular/router';
 
 import { ToastrModule } from 'ngx-toastr';
+import { NgxMatDateFnsDateModule } from 'ngx-mat-datefns-date-adapter';
 
 // Interceptors
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
@@ -18,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { LayoutModule } from './layout/layout.module';
+import { CoreModule } from './core/core.module';
 
 // Components
 import { HomeComponent } from '@modules/home/home.component';
@@ -44,10 +46,12 @@ registerLocaleData(LocaleEsPe);
     AppRoutingModule,
     ToastrModule.forRoot(AppSettings.TOAST_CONFIG),
     MaterialModule,
+    NgxMatDateFnsDateModule,
 
     LayoutModule,
     SharedModule,
     AuthModule,
+    CoreModule
   ],
   bootstrap: [AppComponent],
   providers: [

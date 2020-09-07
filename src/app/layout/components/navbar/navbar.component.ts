@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { RouteUtil } from '@core/utils/route.util';
 import { RoutePath } from '@core/configs/route-path.config';
 import { Role } from '@core/enums/role.enum';
 
@@ -14,11 +13,10 @@ import { Role } from '@core/enums/role.enum';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent implements OnInit {
-  unsubscribe$: Subject<void> = new Subject();
   username: string;
 
   constructor(
-    public authService: AuthService,
+    private _authService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -28,6 +26,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
+    this._authService.logout();
   }
 }
