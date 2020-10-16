@@ -9,7 +9,7 @@ import {
 
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { NotificationService } from '@core/services/notification.service';
+import { NotificationService } from '@core/services/common/notification.service';
 import HttpStatusCode from '@core/enums/http-status-code.enum';
 
 @Injectable({ providedIn: 'root' })

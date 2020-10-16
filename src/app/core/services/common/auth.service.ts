@@ -7,10 +7,10 @@ import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { environment } from '@env';
-import { LoginRequest } from '../models/login-request.model';
-import { UserSession } from '../models/user-session.model';
-import { RoutePath } from '../configs/route-path.config';
+import { LoginRequest } from '@core/models/login-request.model';
+import { UserSession } from '@core/models/user-session.model';
 import { Role } from '@core/enums/role.enum';
+import { AppRoute } from '@core/enums/app-route.enum';
 
 const KEY_USER_SESSION = 'ASDFOWEKFOWEPFKWOE';
 
@@ -50,7 +50,7 @@ export class AuthService {
 
     logout(): void {
         localStorage.removeItem(KEY_USER_SESSION);
-        this._router.navigate([`/${RoutePath.LOGIN}`]);
+        this._router.navigate([`/${AppRoute.LOGIN}`]);
     }
 
     hasRoles(roles: Role[]) {

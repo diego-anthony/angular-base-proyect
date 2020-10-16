@@ -5,10 +5,12 @@ import { MaterialModule } from '../material.module';
 
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { EnvironmentIndicatorComponent } from './environment-indicator/environment-indicator.component';
 
 const components = [
   ConfirmDialogComponent,
   CarouselComponent,
+  EnvironmentIndicatorComponent,
 ];
 
 @NgModule({

@@ -4,8 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Subject, of } from 'rxjs';
 
-import { NotificationService } from '@core/services/notification.service';
-import { AuthService } from '@core/services/auth.service';
+import { NotificationService } from '@core/services/common/notification.service';
+import { AuthService } from '@core/services/common/auth.service';
 import { takeUntil, finalize, catchError } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import HttpStatusCode from '@core/enums/http-status-code.enum';

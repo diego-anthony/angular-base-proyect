@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './modules/auth/login/login.component';
-import { NoAuthGuard } from './core/guards/no-auth.guard';
-import { LayoutComponent } from './layout/layout.component';
-import { RoutePath } from './core/configs/route-path.config';
+import { NoAuthGuard } from '@core/guards/no-auth.guard';
+import { AppRoute } from '@core/enums/app-route.enum';
+import { LayoutComponent } from '@layout/layout.component';
+import { LoginComponent } from '@modules/auth/login/login.component';
 import { HomeComponent } from '@modules/home/home.component';
 
 export const ROUTES: Routes = [
   {
-    path: RoutePath.LOGIN, component: LoginComponent, canActivate: [NoAuthGuard],
+    path: AppRoute.LOGIN, component: LoginComponent, canActivate: [NoAuthGuard],
   },
   {
     path: '', component: LayoutComponent,

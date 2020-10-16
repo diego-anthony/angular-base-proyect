@@ -10,7 +10,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import HttpStatusCode from '@core/enums/http-status-code.enum';
-import { AuthService } from '@core/services/auth.service';
+import { AuthService } from '@core/services/common/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthInterceptor implements HttpInterceptor {

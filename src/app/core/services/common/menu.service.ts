@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MenuItem } from '../models/menu-item.model';
-import { RoutePath } from '../configs/route-path.config';
+import { MenuItem } from '../../models/menu-item.model';
 
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +9,7 @@ export class MenuService {
             {
                 icon: 'home',
                 label: 'Home',
-                path: RoutePath.LOGIN
+                // path: AppRoute.LOGIN
             },
         ];
         return data;

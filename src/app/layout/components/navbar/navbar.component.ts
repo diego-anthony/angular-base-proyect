@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@core/services/auth.service';
-import { Router } from '@angular/router';
 
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-
-import { RoutePath } from '@core/configs/route-path.config';
-import { Role } from '@core/enums/role.enum';
+import { AuthService } from '@core/services/common/auth.service';
 
 @Component({
   selector: 'app-navbar',

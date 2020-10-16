@@ -13,7 +13,7 @@ const SHARED = [
 ];
 
 @NgModule({
-  declarations: [...DIRECTIVES],
-  exports: [...DIRECTIVES]
+  declarations: [...SHARED],
+  exports: [...SHARED]
 })
 export class CoreModule { }
