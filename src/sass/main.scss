@@ -7,24 +7,29 @@
 
 html,
 body {
-    height: 100%;
-    overflow-y: auto;
+  height: 100%;
+  overflow-y: auto;
 }
 body {
-    margin: 0;
-    font-family: "concord";
-    font-weight: 300;
+  margin: 0;
+  font-family: 'concord';
+  font-weight: 300;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+img {
+    width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 .cdk-global-scrollblock {
-    position: fixed;
-    width: 100%;
-    overflow-y: auto;
+  position: fixed;
+  width: 100%;
+  overflow-y: auto;
 }
-
 
 @import 'components/spinner';
 @import 'components/icons';
@@ -52,17 +57,16 @@ body {
 @import 'utils/status-color';
 @import 'utils/center';
 
-
-html{
-    font-size: 1rem;
+html {
+  font-size: 1rem;
 }
-@include sm{
-    html{
-        font-size: 1.1rem;
-    }
+@include sm {
+  html {
+    font-size: 1.1rem;
+  }
 }
-@include lg{
-    html{
-        font-size: 18px;
-    }
+@include lg {
+  html {
+    font-size: 18px;
+  }
 }
