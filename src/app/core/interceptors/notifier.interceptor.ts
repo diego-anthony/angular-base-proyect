@@ -12,7 +12,7 @@ import { catchError } from 'rxjs/operators';
 import { NotificationService } from '@core/services/common/notification.service';
 import HttpStatusCode from '@core/enums/http-status-code.enum';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class NotifierInterceptor implements HttpInterceptor {
   constructor(private _notification: NotificationService) {}
 

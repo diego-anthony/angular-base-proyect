@@ -27,6 +27,7 @@
     "date-fns": "^2.16.1",
     "lazysizes": "^5.2.2",
     "ngx-mat-datefns-date-adapter": "^1.0.1",
+    "ngx-spinner": "^10.0.1",
     "ngx-toastr": "^11.3.3",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
